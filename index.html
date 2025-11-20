@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title> ملخص مادة التفسير</title>
+<link rel="stylesheet" href="https://fonts.qurancomplex.gov.sa/nashkh-font/css"/>
+<style>
+  :root{
+    --panel: rgba(232, 220, 200, 0.95);
+    --panel-light: rgba(244, 236, 220, 0.9);
+    --ink: #3d2e26;
+    --ink-bright: #2d1810;
+    --muted: #8d6e4f;
+    --line: #c4b5a0;
+    --shadow: 0 8px 32px rgba(45, 24, 16, 0.15);
+    --accent: #8d6e4f;
+    --accent-hover: #a0826b;
+    --accent-light: #5c4734;
+    --glow: 0 0 20px rgba(141, 110, 79, 0.2);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 15%, #b8a284 35%, #8d6e4f 60%, #5c4734 85%, #2d1810 100%);
+    background-attachment: fixed;
+    color:var(--ink);
+    font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    min-height: 100vh;
+  }
+
+  /* صفحة المقدمة */
+  .coverWrap{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .coverCard{
+    max-width:700px;
+    width:100%;
+    background: var(--panel);
+    border-radius:28px;
+    border:1px solid var(--line);
+    box-shadow: var(--shadow);
+    padding:40px 30px 32px;
+    text-align:center;
+  }
+  .coverTitle{
+    font-size:40px;
+    font-weight:900;
+    letter-spacing:.6px;
+    margin-bottom:10px;
+    background: linear-gradient(135deg, #5c4734 0%, #8d6e4f 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .coverSubtitle{
+    font-size:22px;
+    color:var(--ink-bright);
+    margin-bottom:10px;
+  }
+  .coverTeacher{
+    font-size:16px;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .coverMuted{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:24px;
+  }
+  .coverArrowBtn{
+    border:2px solid #8d6e4f;
+    width:56px;
+    height:56px;
+    border-radius:999px;
+    background: linear-gradient(135deg, #8d6e4f 0%, #a0826b 100%);
+    cursor:pointer;
+    color:#fff4e6;
+    font-weight:700;
+    font-size:26px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:all .2s ease;
+  }
+  .coverArrowBtn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 14px rgba(141,110,79,.5);
+  }
+
+  /* صفحة التطبيق الأصلية */
+  .wrap{
+    max-width:1200px;
+    margin:auto;
+    padding:24px;
+  }
+  
+  /* Header */
+  .hdr{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--line);
+  }
+  .logo{
+    font-size: 26px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #5c4734 0%, #8d6e4f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+  }
+  .search{
+    width:100%;
+    max-width:450px;
+    padding:12px 20px;
+    border:2px solid var(--line);
+    border-radius:50px;
+    background: rgba(255, 250, 240, 0.8);
+    color:var(--ink-bright);
+    outline:none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+  }
+  .search:focus{
+    border-color: var(--accent);
+    box-shadow: var(--glow);
+  }
+  .search::placeholder{
+    color: var(--muted);
+  }
+  
+  /* Grid Layout */
+  .grid{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:20px;
+  }
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr}
+  }
+  
+  .card{
+    background: var(--panel);
+    border:1px solid var(--line);
+    border-radius:24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .aside{
+    max-height:75vh;
+    overflow:auto;
+    padding:12px;
+  }
+  .aside::-webkit-scrollbar{
+    width: 8px;
+  }
+  .aside::-webkit-scrollbar-track{
+    background: var(--panel);
+  }
+  .aside::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, #8d6e4f 0%, #a0826b 100%);
+    border-radius: 10px;
+  }
+  
+  .aside .lbl{
+    font-size:13px;
+    color:var(--accent);
+    padding:8px 12px 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .sbtn{
+    width:100%;
+    text-align:right;
+    padding:14px 16px;
+    border-radius:16px;
+    border:1px solid transparent;
+    background: transparent;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:700;
+    color: var(--ink-bright);
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+  }
+  .sbtn:hover{
+    background: rgba(255, 250, 240, 0.6);
+    border-color: var(--line);
+  }
+  .sbtn .arrow{
+    display:inline-block;
+    transition:transform .25s ease;
+    font-size:12px;
+    color: var(--accent);
+  }
+  
+  .groupItem{
+    width:100%;
+    text-align:right;
+    padding:12px 16px;
+    border-radius:12px;
+    border:1px solid transparent;
+    background: transparent;
+    cursor:pointer;
+    transition: all 0.2s ease;
+    margin: 2px 0;
+  }
+  .groupItem:hover{
+    background: rgba(255, 250, 240, 0.6);
+  }
+  .groupItem.active{
+    background: linear-gradient(135deg, rgba(141,110,79,.25) 0%, rgba(160,130,107,.15) 100%);
+    border-color: var(--accent);
+  }
+  
+  .muted{
+    color:var(--muted);
+    font-size:13px;
+  }
+  
+  /* Main Content */
+  .main{
+    padding:24px;
+  }
+  .meta{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:8px 0 16px;
+  }
+  .title{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:.5px;
+    color: var(--accent-light);
+  }
+  .subtitle{
+    font-size:14px;
+    color:var(--muted);
+    text-align:center;
+  }
+  
+  .inlineWrap{
+    background: linear-gradient(135deg, rgba(244,236,220,0.95) 0%, rgba(232,220,200,0.9) 100%);
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow: inset 0 2px 8px rgba(141,110,79,.1);
+    padding:28px 20px;
+  }
+
+  /* Ayah Line */
+  .ayahLine{
+    margin:16px 0;
+    font-family:'KFGQPC Uthmanic Script Naskh','KFGQPC Uthmanic Script',
+      'KFGQPC','Uthman Naskh','Traditional Arabic',serif;
+    font-size:40px;
+    line-height:2.2;
+    letter-spacing:-.5px;
+    word-spacing:0;
+    -webkit-font-smoothing:antialiased;
+    font-variant-ligatures:contextual common-ligatures;
+    direction:rtl;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    column-gap:20px;
+    justify-content:center;
+    align-items:center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(196,181,160,.4);
+  }
+  .ayahLine:last-child{
+    border-bottom: none;
+  }
+  
+  @media (max-width:520px){
+    .ayahLine{
+      font-size:32px;
+      line-height:2;
+      margin:12px 0;
+    }
+  }
+  
+  .ayahText{
+    display:block;
+    color: var(--ink-bright);
+    white-space:normal;
+    text-align:right;
+  }
+
+  /* Highlighted Word */
+  .hlWord{
+    appearance:none;
+    -webkit-appearance:none;
+    background: linear-gradient(135deg, rgba(141,110,79,.3) 0%, rgba(141,110,79,.2) 100%);
+    border:0;
+    padding:0 .2em;
+    margin:0;
+    font:inherit;
+    color: var(--ink-bright);
+    font-weight:900;
+    cursor:pointer;
+    border-radius:.3em;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid rgba(92,71,52,.6);
+  }
+  .hlWord:hover{
+    background: linear-gradient(135deg, rgba(141,110,79,.5) 0%, rgba(141,110,79,.35) 100%);
+    transform: translateY(-1px);
+  }
+  .hlWord:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  /* Ayah Number Button */
+  .rosetteBtn{
+    appearance:none;
+    -webkit-appearance:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    width:48px;
+    height:48px;
+    border:0;
+    background: transparent;
+    padding:0;
+    transition: transform 0.2s ease;
+  }
+  .rosetteBtn:hover{
+    transform: scale(1.1);
+  }
+  .rosetteBtn.playing svg .core{
+    fill: #8d6e4f;
+  }
+
+  /* Popover */
+  .mask{
+    position:fixed;
+    inset:0;
+    background: rgba(61,46,38,.75);
+    backdrop-filter: blur(4px);
+    z-index:40;
+    display:none;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+  }
+  
+  .popover{
+    position:fixed;
+    right:50%;
+    bottom:50%;
+    transform: translate(50%, 50%);
+    max-width:500px;
+    width: 90%;
+    background: linear-gradient(135deg, #f4ecdc 0%, #e8dcc8 100%);
+    border-radius:24px;
+    box-shadow: 0 20px 60px rgba(45,24,16,.4);
+    border:2px solid #8d6e4f;
+    padding:24px;
+    z-index:50;
+    color: var(--ink);
+    display:none;
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp{
+    from{
+      transform: translate(50%, 60%);
+      opacity: 0;
+    }
+    to{
+      transform: translate(50%, 50%);
+      opacity: 1;
+    }
+  }
+  
+  .popHead{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom: 16px;
+  }
+  
+  .btn{
+    border:2px solid #8d6e4f;
+    padding:10px 20px;
+    border-radius:12px;
+    background: linear-gradient(135deg, #8d6e4f 0%, #a0826b 100%);
+    cursor:pointer;
+    color: #fff4e6;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(141,110,79,.5);
+  }
+  
+  #popWord{
+    font-size:24px;
+    font-weight:800;
+    color: #5c4734;
+    line-height: 1.4;
+  }
+  
+  #popMeaning{
+    margin-top:12px;
+    line-height:1.9;
+    color: var(--ink);
+    background: rgba(255, 250, 240, 0.7);
+    padding: 16px;
+    border-radius: 12px;
+    border-right: 4px solid #8d6e4f;
+  }
+</style>
+</head>
+<body>
+
+  <!-- صفحة المقدّمة -->
+  <div id="cover" class="coverWrap">
+    <div class="coverCard">
+      <div class="coverTitle">الدراسات الاسلامية</div>
+      <div class="coverSubtitle">القران الكريم وتفسيره</div>
+      <div class="coverTeacher">اعداد المعلمه : نسيم محمد المطوع</div>
+      <div class="coverMuted">
+        اول ثانوي
+      </div>
+      <button id="enterBtn" class="coverArrowBtn" aria-label="الانتقال إلى صفحة آيات القرآن">
+        ↓
+      </button>
+    </div>
+  </div>
+
+  <!-- صفحة التطبيق الأصلية -->
+  <div id="app" class="wrap" style="display:none">
+    <div class="hdr">
+      <div class="logo">القرآن الكريم</div>
+      <input id="search" class="search" placeholder="ابحث باسم السورة، رقم الآية"/>
+    </div>
+    
+    <div class="grid">
+      <aside class="card aside">
+        <div class="lbl">السور</div>
+        <ul id="surahList" style="margin:0;padding:0;list-style:none"></ul>
+      </aside>
+      
+      <main class="card main">
+        <div class="meta"><div id="metaSurah" class="subtitle"></div></div>
+        <div class="meta"><div id="metaRange" class="title"></div></div>
+        <div id="ayahContainer"></div>
+        <div id="emptyHint" class="muted" style="display:none;text-align:center;padding:40px 20px">
+          اختر آية من القائمة أو ابحث عنها.
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="mask" class="mask"></div>
+  <div id="popover" class="popover">
+    <div class="popHead">
+      <div style="flex:1">
+        <div class="muted" style="margin-bottom:6px">معنى العبارة</div>
+        <div id="popWord"></div>
+      </div>
+      <button id="closePop" class="btn">إغلاق</button>
+    </div>
+    <div id="popMeaning"></div>
+  </div>
+
+<script>
+/* الانتقال من صفحة المقدمة لصفحة التطبيق */
+const coverEl = document.getElementById('cover');
+const appEl   = document.getElementById('app');
+const enterBtn = document.getElementById('enterBtn');
+
+enterBtn.addEventListener('click', ()=>{
+  coverEl.style.display = 'none';
+  appEl.style.display = 'block';
+  window.scrollTo(0,0);
+});
+
+const SURAH_NUM = {
+  "الفاتحة":1,"يونس":10,"هود":11,"يوسف":12,"الرعد":13,
+  "إبراهيم":14,"الحجر":15,"النحل":16,"الإسراء":17
+};
+
+const pad3 = n => String(n).padStart(3,"0");
+const getAyahAudio = (v,n)=>
+  SURAH_NUM[v.surah]
+    ? `https://everyayah.com/data/Alafasy_128kbps/${pad3(SURAH_NUM[v.surah])}${pad3(n)}.mp3`
+    : undefined;
+
+const HIGHLIGHTS = {
+  "إياك نعبد وإياك نستعين": "نخصّك بالعبادة وحدك، ومنك وحدك نطلب العون.",
+  "الصراط المستقيم": "طريق الحق الواضح الذي لا اعوجاج فيه؛ وهو الإسلام.",
+  "المغضوب عليهم": "من عرفوا الحق ولم يعملوا به.",
+  "الضالين": "من ضلّوا عن الحق عن جهل أو تفريط.",
+  "القسط": "العدل التام الذي لا جور فيه.",
+  "حميم": "ماء شديد الحرارة.",
+  "وقدره منازل": "قدّر القمر منازل للسير ومعرفة الشهور والحساب.",
+  "آخر دعواهم": "ختام دعائهم في الجنة: الحمد لله رب العالمين.",
+  "الحسنى": "أحسن الجزاء؛ الجنة.",
+  "زيادة": "ثواب زائد على الجنة؛ فُسِّر برؤية الله.",
+  "قتر": "غبار وسواد يعلو الوجوه.",
+  "فزيلنا بينهم": "فرّقنا وميّزنا بين الفريقين.",
+  "تبلو كل نفس ما أسلفت": "تنال أو تعاين ما قدّمت من عمل.",
+  "فأنى تصرفون": "كيف تُصرفون عن الحق بعد وضوحه؟",
+  "كلمات الله": "قضاؤه ووعوده وأحكامه التي لا تتبدّل.",
+  "يخرصون": "يختلقون الكذب ظنًّا وتخمينًا.",
+  "مبصرا": "مضيئًا تبصرون فيه.",
+  "سلطان": "حجة وبرهان.",
+  "الورد المورود": "المورد الذي يُساقون إليه؛ وهو النار.",
+  "الرفد المرفود": "عطاء مضاف لكنه عذاب وزيادة شر.",
+  "قائم وحصيد": "من القرى ما هو باق ومنها ما هلك.",
+  "تتبيب": "إهلاك وتخسير.",
+  "غير مجذوذ": "غير منقطع ولا منقوص.",
+  "لا تركنوا": "لا تميلوا إلى الظالمين.",
+  "طرفي النهار": "أول النهار وآخره.",
+  "زلفا من الليل": "ساعات متقاربة من أول الليل.",
+  "الجنة": "دار النعيم المقيم.",
+  "عجاف": "هزيلة ضعيفة.",
+  "دأبا": "عادة مستمرة بلا توقف.",
+  "تحصنون": "تدّخرون وتحفظون.",
+  "حصحص الحق": "ظهر وتبيّن.",
+  "مكين": "ثابت المكانة قويّ التمكّن.",
+  "بصيرة": "علم ويقين.",
+  "غاشية": "عذاب يغشى ويعمّ.",
+  "بغتة": "فجأة.",
+  "استيئس": "غلب عليهم اليأس.",
+  "يفتري": "يختلق الكذب.",
+  "ما تغيض الأرحام": "ما تنقصه الأرحام من حمل أو مدة.",
+  "سارب بالنهار": "ظاهر في النهار يسير بلا خوف.",
+  "معقبات": "ملائكة يتعاقبون على الإنسان للحفظ.",
+  "شديد المحال": "شديد القوة والأخذ.",
+  "الغدو": "أوائل النهار.",
+  "الآصال": "أواخر النهار.",
+  "يدرؤون": "يدفعون السيئة بالحسنة.",
+  "جنات عدن": "جنات إقامة دائمة.",
+  "يقدر": "يضيق الرزق.",
+  "طوبى": "خير كثير أو شجرة في الجنة.",
+  "حسن مآب": "مرجع طيب.",
+  "كلمة طيبة": "قول ثابت نافع(كلمة التوحيد).",
+  "كلمة خبيثة": "قول باطل لا أصل له(كلمة الكفر).",
+  "اجتثت": "اقتُلعت من أصلها.",
+  "دار البوار": "دار الهلاك؛ جهنم.",
+  "خلال": "فيما بينهم.",
+  "تشخص": "لا تتحرك من شدة الفزع.",
+  "مهطعين": "مسرعين ومعهم ذل وخضوع.",
+  "مقنعي رؤوسهم": "رافعين رؤوسهم بذل.",
+  "أفئدتهم هواء": "قلوبهم فارغة من الرجاء والعقل.",
+  "مقرنين في الأصفاد": "مربوطين بالسلاسل.",
+  "سرابيلهم": "ثيابهم.",
+  "صلصال": "طين يابس له صلصلة.",
+  "حمأ مسنون": "طين أسود متغيّر.",
+  "رجيم": "مطرود من رحمة الله.",
+  "فانظرني": "أمهلني.",
+  "غل": "قيد في العنق.",
+  "نصب": "تعب.",
+  "الصفح الجميل": "العفو دون عتاب.",
+  "سبعا من المثاني": "الفاتحة أو السبع الآيات المتكررة.",
+  "اخفض جناحك": "تواضع ولِن جانبك.",
+  "المقتسمين": "الذين يجزئون الكتاب أو يصدّون الناس.",
+  "عضين": "آمنوا ببعض وكفروا ببعض.",
+  "البطن": "ما في البطن من جنين أو طعام.",
+  "امة": "قدوة يُقتدى بها.",
+  "حنيفا": "مائلا إلى التوحيد.",
+  "اجتباه": "اصطفاه واختاره.",
+  "رغدا": "واسعًا طيبًا.",
+  "أهل لغير الله به": "ذُكر عليه اسم غير الله.",
+  "باغ": "متجاوز للحد.",
+  "عاد": "متجاوز الحد أو قوم عاد.",
+  "تسيمون": "ترعون أنعامكم.",
+  "ذرا": "خلق ونشر.",
+  "حلية": "زينة.",
+  "مواخر": "تشُقّ الماء.",
+  "رواسي": "جبال ثابتة.",
+  "تميد": "تميل وتضطرب.",
+  "قضى": "أمر وأوجب.",
+  "الأوابين": "كثيرو الرجوع إلى الله.",
+  "ابن السبيل": "المسافر المنقطع.",
+  "مغلولة": "مربوطة كناية عن البخل.",
+  "إملاق": "فقر شديد.",
+  "القسطاس المستقيم": "الميزان العادل.",
+  "تثقف": "تظفر بهم.",
+  "مرحا": "متكبّرًا مختالا.",
+  "مدحورا": "مطرودا.",
+  "دلوك الشمس": "زوالها وقت الظهر.",
+  "غسق الليل": "شدة ظلمته.",
+  "مشهودا": "تحضره الملائكة (الفجر).",
+  "ناء بجانبه": "تباعد تكبرًا.",
+  "شاكلته": "طريقته وهيئته.",
+  "فريقاه": "طائفتاه أو مجموعتاه.",
+  "على مكث": "على تمهّل وتؤدة بلا استعجال.",
+  "تخافت": "تخفض صوتها أو تسرّه.",
+  "يخرون": "يسقطون إلى الأرض سريعًا وخضوعًا (سجودًا)."
+};
+
+const VERSES = [
+  { id:"1:1-7",  surah:"الفاتحة", ayah:"1-7",   text:"",              from:1,   to:7   },
+  { id:"10:3-10",  surah:"يونس",   ayah:"3-10",  text:"الجزء الأول",   from:3,   to:10  },
+  { id:"10:26-33", surah:"يونس",   ayah:"26-33", text:"الجزء الثاني",  from:26,  to:33  },
+  { id:"10:62-70", surah:"يونس",   ayah:"62-70", text:"الجزء الثالث",  from:62,  to:70  },
+  { id:"11:96-108",  surah:"هود", ayah:"96-108", text:"الجزء الأول",   from:96,  to:108 },
+  { id:"11:112-123", surah:"هود", ayah:"112-123",text:"الجزء الثاني",  from:112, to:123 },
+  { id:"12:46-57",   surah:"يوسف", ayah:"46-57", text:"الجزء الأول",   from:46,  to:57  },
+  { id:"12:102-111", surah:"يوسف", ayah:"102-111",text:"الجزء الثاني", from:102, to:111 },
+  { id:"13:8-15",  surah:"الرعد", ayah:"8-15",  text:"الجزء الأول",   from:8,   to:15  },
+  { id:"13:19-29", surah:"الرعد", ayah:"19-29", text:"الجزء الثاني",  from:19,  to:29  },
+  { id:"14:24-31", surah:"إبراهيم", ayah:"24-31", text:"الجزء الأول", from:24, to:31 },
+  { id:"14:42-52", surah:"إبراهيم", ayah:"42-52", text:"الجزء الثاني",from:42, to:52 },
+  { id:"15:28-50", surah:"الحجر", ayah:"28-50", text:"الجزء الأول",   from:28, to:50 },
+  { id:"15:85-99", surah:"الحجر", ayah:"85-99", text:"الجزء الثاني",  from:85, to:99 },
+  { id:"16:10-18",  surah:"النحل", ayah:"10-18",  text:"الجزء الأول",  from:10,  to:18  },
+  { id:"16:112-117",surah:"النحل", ayah:"112-117",text:"الجزء الثاني", from:112, to:117 },
+  { id:"16:120-128",surah:"النحل", ayah:"120-128",text:"الجزء الثالث", from:120, to:128 },
+  { id:"17:23-30",  surah:"الإسراء", ayah:"23-30", text:"الجزء الأول",  from:23,  to:30  },
+  { id:"17:31-39",  surah:"الإسراء", ayah:"31-39", text:"الجزء الثاني", from:31,  to:39  },
+  { id:"17:78-87",  surah:"الإسراء", ayah:"78-87", text:"الجزء الثالث", from:78,  to:87  },
+  { id:"17:105-111",surah:"الإسراء", ayah:"105-111",text:"الجزء الرابع",from:105, to:111 }
+];
+
+const els = {
+  search:document.getElementById('search'),
+  surahList:document.getElementById('surahList'),
+  metaSurah:document.getElementById('metaSurah'),
+  metaRange:document.getElementById('metaRange'),
+  ayahContainer:document.getElementById('ayahContainer'),
+  emptyHint:document.getElementById('emptyHint'),
+  mask:document.getElementById('mask'),
+  pop:document.getElementById('popover'),
+  popWord:document.getElementById('popWord'),
+  popMeaning:document.getElementById('popMeaning'),
+  closePop:document.getElementById('closePop')
+};
+
+let activeVerse = VERSES[0] || null;
+let currentAudio = null, currentBtn = null;
+let renderToken = 0;
+const collapsedState = {};
+
+/* حالة تشغيل الجزء بالكامل */
+let rangeState = null;
+const RANGE_LABEL_DEFAULT = "تشغيل";
+const RANGE_LABEL_STOP    = "إيقاف التشغيل ";
+
+function formatAyahRange(v){
+  if (v && v.from != null && v.to != null) return `${v.from}-${v.to}`;
+  return v?.ayah || "";
+}
+
+function stopCurrent(){
+  if(currentAudio){currentAudio.pause();currentAudio=null;}
+  if(currentBtn){currentBtn.classList.remove('playing');currentBtn=null;}
+}
+
+function stopRangePlayback(){
+  if(rangeState && rangeState.button){
+    rangeState.button.textContent = RANGE_LABEL_DEFAULT;
+  }
+  rangeState = null;
+}
+
+function playAyahOnce(v,num,btn){
+  /* إيقاف تشغيل الجزء المتواصل إن وُجد */
+  stopRangePlayback();
+
+  const src = getAyahAudio(v,num);
+  if(!src) return;
+  if(currentBtn===btn){stopCurrent();return;}
+  stopCurrent();
+  const a=new Audio(src);
+  currentAudio=a; currentBtn=btn;
+  btn.classList.add('playing');
+  a.onended = ()=>stopCurrent();
+  a.onerror = ()=>stopCurrent();
+  a.play().catch(()=>stopCurrent());
+}
+
+function playNextInRange(){
+  if(!rangeState || !activeVerse) return;
+  const v = rangeState.verse;
+
+  if(rangeState.current > v.to){
+    stopCurrent();
+    if(rangeState.button){
+      rangeState.button.textContent = RANGE_LABEL_DEFAULT;
+    }
+    rangeState = null;
+    return;
+  }
+
+  const n = rangeState.current;
+  const src = getAyahAudio(v, n);
+  if(!src){
+    rangeState.current++;
+    playNextInRange();
+    return;
+  }
+
+  stopCurrent();
+
+  const a = new Audio(src);
+  currentAudio = a;
+  const rosette = document.querySelector(`.rosetteBtn[data-ayah-num="${n}"]`);
+  currentBtn = rosette || null;
+  if(rosette){
+    rosette.classList.add('playing');
+  }
+
+  a.onended = ()=>{
+    if(!rangeState || rangeState.verse !== v){
+      stopCurrent();
+      return;
+    }
+    rangeState.current++;
+    playNextInRange();
+  };
+  a.onerror = ()=>{
+    if(!rangeState || rangeState.verse !== v){
+      stopCurrent();
+      return;
+    }
+    rangeState.current++;
+    playNextInRange();
+  };
+
+  a.play().catch(()=>{
+    if(!rangeState || rangeState.verse !== v){
+      stopCurrent();
+      return;
+    }
+    rangeState.current++;
+    playNextInRange();
+  });
+}
+
+function playRangeSequential(verse, button){
+  if(rangeState && rangeState.button === button){
+    stopCurrent();
+    stopRangePlayback();
+    return;
+  }
+
+  stopCurrent();
+  stopRangePlayback();
+
+  rangeState = {
+    verse,
+    button,
+    current: verse.from
+  };
+  button.textContent = RANGE_LABEL_STOP;
+  playNextInRange();
+}
+
+function openPopover(word,meaning){
+  els.popWord.textContent = word;
+  els.popMeaning.textContent = meaning || "لا معنى مُسجَّل لهذه العبارة.";
+  els.mask.style.display = "block";
+  els.pop.style.display = "block";
+}
+
+function closePopover(){
+  els.mask.style.display = "none";
+  els.pop.style.display = "none";
+}
+
+els.mask.onclick = closePopover;
+els.closePop.onclick = closePopover;
+
+function isIgnorable(ch){
+  const code = ch.charCodeAt(0);
+  if (code === 0x0640) return true;
+  if (code >= 0x064B && code <= 0x065F) return true;
+  if (code === 0x0670) return true;
+  if (code >= 0x06D6 && code <= 0x06ED) return true;
+  return false;
+}
+
+function normalizeWithMap(str){
+  const normChars = [];
+  const map = [];
+  for(let i=0;i<str.length;i++){
+    const ch = str[i];
+    if (isIgnorable(ch)) continue;
+    normChars.push(ch);
+    map.push(i);
+  }
+  return {norm:normChars.join(""), map};
+}
+
+function normalizeOnly(str){
+  return normalizeWithMap(str).norm;
+}
+
+function simplifyArabic(str){
+  return str
+    .replace(/[أإآٱ]/g,'ا')
+    .replace(/ى/g,'ي')
+    .replace(/ؤ/g,'و')
+    .replace(/ئ/g,'ي')
+    .replace(/ة/g,'ه');
+}
+
+function buildHighlightedNodes(text){
+  const frag = document.createDocumentFragment();
+  if (!text) return frag;
+
+  const {norm, map} = normalizeWithMap(text);
+  const normSimple = simplifyArabic(norm);
+
+  const spans = [];
+  const keys = Object.keys(HIGHLIGHTS);
+
+  for (const key of keys){
+    const nk = simplifyArabic(normalizeOnly(key));
+    if (!nk) continue;
+
+    let startSearch = 0;
+    while (true){
+      const idx = normSimple.indexOf(nk, startSearch);
+      if (idx === -1) break;
+
+      const startOrig = map[idx];
+      const endOrig   = (idx + nk.length - 1 < map.length)
+        ? map[idx + nk.length - 1] + 1
+        : text.length;
+
+      spans.push({start:startOrig, end:endOrig, key});
+      startSearch = idx + nk.length;
+    }
+  }
+
+  if (!spans.length){
+    frag.appendChild(document.createTextNode(text));
+    return frag;
+  }
+
+  spans.sort((a,b)=> a.start===b.start ? b.end - a.end : a.start - b.start);
+
+  const filtered = [];
+  let curEnd = -1;
+  for (const s of spans){
+    if (s.start >= curEnd){
+      filtered.push(s);
+      curEnd = s.end;
+    }
+  }
+
+  let pos = 0;
+  for (const s of filtered){
+    if (pos < s.start){
+      frag.appendChild(document.createTextNode(text.slice(pos, s.start)));
+    }
+    const phrase = text.slice(s.start, s.end);
+    const btn = document.createElement('button');
+    btn.type = "button";
+    btn.className = "hlWord";
+    btn.textContent = phrase;
+    const key = s.key;
+    btn.onclick = ()=>openPopover(key, HIGHLIGHTS[key]);
+    frag.appendChild(btn);
+    pos = s.end;
+  }
+  if (pos < text.length){
+    frag.appendChild(document.createTextNode(text.slice(pos)));
+  }
+
+  return frag;
+}
+
+/* ===== نصوص يدوية لبعض الآيات ===== */
+const AYAH_DATA = {
+  "1": {
+    1: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    2: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+    3: "الرَّحْمَٰنِ الرَّحِيمِ",
+    4: "مَالِكِ يَوْمِ الدِّينِ",
+    5: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+    6: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+    7: "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ"
+  },
+  "10": {
+    3: "إِنَّ رَبَّكُمُ اللَّهُ الَّذِي خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ فِي سِتَّةِ أَيَّامٍ ثُمَّ اسْتَوَىٰ عَلَى الْعَرْشِ ۖ يُدَبِّرُ الْأَمْرَ ۖ مَا مِن شَفِيعٍ إِلَّا مِن بَعْدِ إِذْنِهِ ۚ ذَٰلِكُمُ اللَّهُ رَبُّكُمْ فَاعْبُدُوهُ ۚ أَفَلَا تَذَكَّرُونَ",
+    4: "إِلَيْهِ مَرْجِعُكُمْ جَمِيعًا ۖ وَعْدَ اللَّهِ حَقًّا ۚ إِنَّهُ يَبْدَأُ الْخَلْقَ ثُمَّ يُعِيدُهُ لِيَجْزِيَ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ بِالْقِسْطِ ۚ وَالَّذِينَ كَفَرُوا لَهُمْ شَرَابٌ مِّن حَمِيمٍ وَعَذَابٌ أَلِيمٌ بِمَا كَانُوا يَكْفُرُونَ",
+    5: "هُوَ الَّذِي جَعَلَ الشَّمْسَ ضِيَاءً وَالْقَمَرَ نُورًا وَقَدَّرَهُ مَنَازِلَ لِتَعْلَمُوا عَدَدَ السِّنِينَ وَالْحِسَابَ ۚ مَا خَلَقَ اللَّهُ ذَٰلِكَ إِلَّا بِالْحَقِّ ۚ يُفَصِّلُ الْآيَاتِ لِقَوْمٍ يَعْلَمُونَ",
+    6: "إِنَّ فِي اخْتِلَافِ اللَّيْلِ وَالنَّهَارِ وَمَا خَلَقَ اللَّهُ فِي السَّمَاوَاتِ وَالْأَرْضِ لَآيَاتٍ لِّقَوْمٍ يَتَّقُونَ",
+    7: "إِنَّ الَّذِينَ لَا يَرْجُونَ لِقَاءَنَا وَرَضُوا بِالْحَيَاةِ الدُّنْيَا وَاطْمَأَنُّوا بِهَا وَالَّذِينَ هُمْ عَنْ آيَاتِنَا غَافِلُونَ",
+    8: "أُولَٰئِكَ مَأْوَاهُمُ النَّارُ بِمَا كَانُوا يَكْسِبُونَ",
+    9: "إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ يَهْدِيهِمْ رَبُّهُم بِإِيمَانِهِمْ ۖ تَجْرِي مِن تَحْتِهِمُ الْأَنْهَارُ فِي جَنَّاتِ النَّعِيمِ",
+    10: "دَعْوَاهُمْ فِيهَا سُبْحَانَكَ اللَّهُمَّ وَتَحِيَّتُهُمْ فِيهَا سَلَامٌ ۚ وَآخِرُ دَعْوَاهُمْ أَنِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+    26: "لِّلَّذِينَ أَحْسَنُوا الْحُسْنَىٰ وَزِيَادَةٌ ۖ وَلَا يَرْهَقُ وُجُوهَهُمْ قَتَرٌ وَلَا ذِلَّةٌ ۚ أُولَٰئِكَ أَصْحَابُ الْجَنَّةِ ۖ هُمْ فِيهَا خَالِدُونَ",
+    27: "وَالَّذِينَ كَسَبُوا السَّيِّئَاتِ جَزَاءُ سَيِّئَةٍ بِمِثْلِهَا وَتَرْهَقُهُمْ ذِلَّةٌ ۖ مَّا لَهُم مِّنَ اللَّهِ مِنْ عَاصِمٍ ۖ كَأَنَّمَا أُغْشِيَتْ وُجُوهُهُمْ قِطَعًا مِّنَ اللَّيْلِ مُظْلِمًا ۚ أُولَٰئِكَ أَصْحَابُ النَّارِ ۖ هُمْ فِيهَا خَالِدُونَ",
+    28: "وَيَوْمَ نَحْشُرُهُمْ جَمِيعًا ثُمَّ نَقُولُ لِلَّذِينَ أَشْرَكُوا مَكَانَكُمْ أَنتُمْ وَشُرَكَاؤُكُمْ ۚ فَزَيَّلْنَا بَيْنَهُمْ ۖ وَقَالَ شُرَكَاؤُهُم مَّا كُنتُمْ إِيَّانَا تَعْبُدُونَ",
+    29: "فَكَفَىٰ بِاللَّهِ شَهِيدًا بَيْنَنَا وَبَيْنَكُمْ إِن كُنَّا عَنْ عِبَادَتِكُمْ لَغَافِلِينَ",
+    30: "هُنَالِكَ تَبْلُو كُلُّ نَفْسٍ مَا أَسْلَفَتْ ۚ وَرُدُّوا إِلَى اللَّهِ مَوْلَاهُمُ الْحَقِّ ۖ وَضَلَّ عَنْهُمْ مَا كَانُوا يَفْتَرُونَ",
+    31: "قُلْ مَن يَرْزُقُكُم مِّنَ السَّمَاءِ وَالْأَرْضِ أَمَّن يَمْلِكُ السَّمْعَ وَالْأَبْصَارَ وَمَن يُخْرِجُ الْحَيَّ مِنَ الْمَيِّتِ وَيُخْرِجُ الْمَيِّتَ مِنَ الْحَيِّ وَمَن يُدَبِّرُ الْأَمْرَ ۚ فَسَيَقُولُونَ اللَّهُ ۚ فَقُلْ أَفَلَا تَتَّقُونَ",
+    32: "فَذَٰلِكُمُ اللَّهُ رَبُّكُمُ الْحَقُّ ۖ فَمَاذَا بَعْدَ الْحَقِّ إِلَّا الضَّلَالُ ۖ فَأَنَّىٰ تُصْرَفُونَ",
+    33: "كَذَٰلِكَ حَقَّتْ كَلِمَتُ رَبِّكَ عَلَى الَّذِينَ فَسَقُوا أَنَّهُمْ لَا يُؤْمِنُونَ",
+    62: "أَلَا إِنَّ أَوْلِيَاءَ اللَّهِ لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ",
+    63: "الَّذِينَ آمَنُوا وَكَانُوا يَتَّقُونَ",
+    64: "لَهُمُ الْبُشْرَىٰ فِي الْحَيَاةِ الدُّنْيَا وَفِي الْآخِرَةِ ۚ لَا تَبْدِيلَ لِكَلِمَاتِ اللَّهِ ۚ ذَٰلِكَ هُوَ الْفَوْزُ الْعَظِيمُ",
+    65: "وَلَا يَحْزُنكَ قَوْلُهُمْ ۘ إِنَّ الْعِزَّةَ لِلَّهِ جَمِيعًا ۚ هُوَ السَّمِيعُ الْعَلِيمُ",
+    66: "أَلَا إِنَّ لِلَّهِ مَن فِي السَّمَاوَاتِ وَمَن فِي الْأَرْضِ ۗ وَمَا يَتَّبِعُ الَّذِينَ يَدْعُونَ مِن دُونِ اللَّهِ شُرَكَاءَ ۚ إِن يَتَّبِعُونَ إِلَّا الظَّنَّ وَإِنْ هُمْ إِلَّا يَخْرُصُونَ",
+    67: "هُوَ الَّذِي جَعَلَ لَكُمُ اللَّيْلَ لِتَسْكُنُوا فِيهِ وَالنَّهَارَ مُبْصِرًا ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَسْمَعُونَ",
+    68: "قَالُوا اتَّخَذَ اللَّهُ وَلَدًا ۗ سُبْحَانَهُ ۖ هُوَ الْغَنِيُّ ۖ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۚ إِنْ عِندَكُم مِّن سُلْطَانٍ بِهَٰذَا ۚ أَتَقُولُونَ عَلَى اللَّهِ مَا لَا تَعْلَمُونَ",
+    69: "قُلْ إِنَّ الَّذِينَ يَفْتَرُونَ عَلَى اللَّهِ الْكَذِبَ لَا يُفْلِحُونَ",
+    70: "مَتَاعٌ فِي الدُّنْيَا ثُمَّ إِلَيْنَا مَرْجِعُهُمْ ثُمَّ نُذِيقُهُمُ الْعَذَابَ الشَّدِيدَ بِمَا كَانُوا يَكْفُرُونَ"
+  }
+};
+
+const AYAH_CACHE = {};
+
+function surahIndexByName(name){
+  return SURAH_NUM[name];
+}
+
+async function fetchAyahText(surahNumber, ayahNumber){
+  const key = `${surahNumber}:${ayahNumber}`;
+
+  const local = AYAH_DATA[String(surahNumber)]?.[ayahNumber];
+  if (local) return local;
+
+  if (AYAH_CACHE[key]) return AYAH_CACHE[key];
+
+  try{
+    const res = await fetch(
+      `https://api.alquran.cloud/v1/ayah/${surahNumber}:${ayahNumber}/ar.alafasy`
+    );
+
+    if (!res.ok){
+      return "تعذّر تحميل هذه الآية من خدمة القرآن.";
+    }
+
+    const data = await res.json();
+    const text = data && data.data && data.data.text ? data.data.text : "";
+
+    AYAH_CACHE[key] = text;
+    return text || "تعذّر تحميل هذه الآية من خدمة القرآن.";
+  }catch(e){
+    return "تعذّر تحميل هذه الآية من خدمة القرآن.";
+  }
+}
+
+function renderSidebar(list){
+  const map = new Map();
+  list.forEach(v=>{
+    if(!map.has(v.surah)) map.set(v.surah,[]);
+    map.get(v.surah).push(v);
+  });
+
+  els.surahList.innerHTML = "";
+  [...map.entries()].forEach(([surah,items])=>{
+    const li=document.createElement('li');
+
+    const head=document.createElement('button');
+    head.className="sbtn";
+    const isCollapsed = !!collapsedState[surah];
+    head.innerHTML =
+      `<span>${surah}</span><span class="arrow">${isCollapsed?'◂':'▾'}</span>`;
+    li.appendChild(head);
+
+    const ul=document.createElement('ul');
+    ul.style.listStyle="none";
+    ul.style.padding="6px 0 0";
+    ul.style.margin=0;
+    ul.style.display = isCollapsed ? "none" : "block";
+
+    items.forEach(v=>{
+      const it=document.createElement('li');
+      const b=document.createElement('button');
+      b.className="groupItem"+(activeVerse && activeVerse.id===v.id ? " active" : "");
+      b.innerHTML =
+        `<div class="muted">الآيات: ${formatAyahRange(v)}</div>`+
+        `<div style="font-size:12px;color:#b8a090">${v.text||""}</div>`;
+      b.onclick = ()=>{
+        activeVerse = v;
+        stopCurrent();
+        stopRangePlayback();
+        renderSidebar(list);
+        renderMain();
+      };
+      it.appendChild(b);
+      ul.appendChild(it);
+    });
+
+    head.onclick = ()=>{
+      collapsedState[surah] = !collapsedState[surah];
+      renderSidebar(list);
+    };
+
+    li.appendChild(ul);
+    els.surahList.appendChild(li);
+  });
+}
+
+async function renderMain(){
+  const myToken = ++renderToken;
+
+  if(!activeVerse){
+    els.ayahContainer.innerHTML="";
+    els.emptyHint.style.display="block";
+    return;
+  }
+
+  els.emptyHint.style.display="none";
+  els.metaSurah.textContent = activeVerse.surah || "";
+  els.metaRange.textContent = `الآيات: ${formatAyahRange(activeVerse)}`;
+
+  const container = els.ayahContainer;
+  container.innerHTML = "";
+
+  const wrap = document.createElement('div');
+  wrap.className = "inlineWrap";
+
+  /* بداية كل جزء: تنبيه وإمكانية تشغيل الجزء كامل متواصل */
+  const rangeBar = document.createElement('div');
+  rangeBar.style.display = "flex";
+  rangeBar.style.justifyContent = "space-between";
+  rangeBar.style.alignItems = "center";
+  rangeBar.style.marginBottom = "12px";
+  const rangeText = document.createElement('div');
+  rangeText.className = "muted";
+  rangeText.style.fontSize = "13px";
+  const rangeBtn = document.createElement('button');
+  rangeBtn.type = "button";
+  rangeBtn.className = "btn";
+  rangeBtn.textContent = RANGE_LABEL_DEFAULT;
+  rangeBtn.onclick = ()=>playRangeSequential(activeVerse, rangeBtn);
+  rangeBar.appendChild(rangeText);
+  rangeBar.appendChild(rangeBtn);
+  wrap.appendChild(rangeBar);
+
+  const surahNum = surahIndexByName(activeVerse.surah);
+  if(!surahNum){
+    container.textContent = "تعذر تحديد رقم السورة.";
+    return;
+  }
+
+  for(let num = activeVerse.from; num <= activeVerse.to; num++){
+    if (myToken !== renderToken) return;
+
+    let text = "";
+    try{
+      text = await fetchAyahText(surahNum, num);
+    }catch(e){
+      text = "تعذّر تحميل هذه الآية من خدمة القرآن.";
+    }
+
+    const line  = document.createElement('div');
+    line.className="ayahLine";
+
+    const btn = document.createElement('button');
+    btn.type="button";
+    btn.className="rosetteBtn";
+    btn.dataset.ayahNum = String(num);
+    btn.innerHTML = `
+      <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+        <defs>
+          <filter id="s${num}" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity=".25"/>
+          </filter>
+          <linearGradient id="grad${num}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8d6e4f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a0826b;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <g filter="url(#s${num})">
+          <circle cx="32" cy="32" r="28" fill="rgba(244,236,220,0.95)" stroke="#8d6e4f" stroke-width="2" class="core"/>
+          ${Array.from({length:12},(_,i)=>{
+            const a=(i*30)*Math.PI/180,R=28,r=33;
+            const x1=32+R*Math.cos(a),y1=32+R*Math.sin(a);
+            const x2=32+r*Math.cos(a),y2=32+r*Math.sin(a);
+            return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#8d6e4f" stroke-width="2.5" opacity="0.5"/>`;
+          }).join("")}
+          <circle cx="32" cy="32" r="18" fill="none" stroke="url(#grad${num})" stroke-width="2"/>
+          <text x="32" y="37" text-anchor="middle"
+                font-family="system-ui,Segoe UI,Arial"
+                font-size="16" font-weight="800" fill="#5c4734">${num}</text>
+        </g>
+      </svg>`;
+    btn.setAttribute("aria-label",`تشغيل آية ${num}`);
+    btn.onclick = () => playAyahOnce(activeVerse, num, btn);
+
+    const span  = document.createElement('span');
+    span.className="ayahText";
+    span.appendChild(buildHighlightedNodes(text));
+
+    line.appendChild(btn);
+    line.appendChild(span);
+    wrap.appendChild(line);
+  }
+
+  if (myToken !== renderToken) return;
+  container.appendChild(wrap);
+}
+
+function filterData(q){
+  q = q.trim();
+  if(!q) return VERSES;
+  return VERSES.filter(v =>
+    (v.surah && v.surah.includes(q)) ||
+    (v.text && v.text.includes(q))  ||
+    (formatAyahRange(v).includes(q))
+  );
+}
+
+renderSidebar(VERSES);
+renderMain();
+
+els.search.addEventListener('input', ()=>{
+  const list = filterData(els.search.value);
+  if(activeVerse && !list.includes(activeVerse)){
+    activeVerse = list[0] || null;
+  }
+  stopCurrent();
+  stopRangePlayback();
+  renderSidebar(list);
+  renderMain();
+});
+</script>
+</body>
+</html>
